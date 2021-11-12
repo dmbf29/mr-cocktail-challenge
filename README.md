@@ -6,23 +6,12 @@ manager. We want to store our favourite cocktails, and their recipes.
 
 ## Rails app generation
 
-Let's install `yarn` if you haven't already!
 
-```bash
-# OSX
-brew install yarn
-
-# Ubuntu
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update && sudo apt-get install yarn
-```
-
-**Note**: You should now be able to run these steps without this cheat sheet! Don't forget the `--webpack` option! Let's also add a `--database=postgresql` (we will talk about this tomorrow). 😉
+**Note**: You should now be able to run these steps without this cheat sheet! Let's also add a `--database=postgresql` (we will talk about this tomorrow). 😉
 
 ```bash
 cd ~/code/<user.github_nickname>
-rails new rails-mister-cocktail -T --webpack --database=postgresql
+rails new rails-mister-cocktail -T --database=postgresql
 cd rails-mister-cocktail
 ```
 
@@ -49,7 +38,7 @@ echo "gem 'rails-controller-testing', group: [ :test ]" >> Gemfile
 bundle install
 rails db:migrate
 rails db:test:prepare
-git submodule add https://github.com/lewagon/fullstack-challenges-04-Rails-mister-cocktail-specs.git spec
+git submodule add https://github.com/dmbf29/mr-cocktail-challenge.git spec
 git add .
 git commit -m "Prepare rails app with external specs"
 ```
