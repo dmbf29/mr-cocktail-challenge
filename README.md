@@ -41,7 +41,7 @@ echo "gem 'rails-controller-testing', group: [ :test ]" >> Gemfile
 bundle install
 rails db:migrate
 rails db:test:prepare
-git submodule add https://github.com/dmbf29/mr-cocktail-challenge.git spec
+git submodule add https://github.com/lewagon/fullstack-challenges-04-Rails-mister-cocktail-specs.git spec
 git add .
 git commit -m "Prepare rails app with external specs"
 ```
