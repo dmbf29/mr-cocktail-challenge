@@ -234,7 +234,7 @@ heroku config:set CLOUDINARY_URL=cloudinary://166....
 ```
 
 
-### 5 - Design as we go
+### 11 - Design as we go
 
 Now time to make a nice front-end! Time to play around with CSS! 😊 Can you make it into the Hall of Fame? Go check out [dribbble](https://dribbble.com/) or [onepagelove](https://onepagelove.com/) for inspiration.
 
@@ -250,19 +250,19 @@ Now time to make a nice front-end! Time to play around with CSS! 😊 Can you ma
 
 Don't forget you can have local images in the `app/assets/images` folder. Or even better, you can ask the user for an `image_url` on submission of the cocktail.
 
-### 6 - New dose form on the cocktail show page (Optional)
+### 12 - New dose form on the cocktail show page (Optional)
 
 Try to put the "New dose form" on the cocktail page, not on a separate page. What changes in the routes? And in the controllers?
 
-### 7 - Select2 on the ingredients dropdown (Optional)
+### 13 - Select2 on the ingredients dropdown (Optional)
 
 Let's try adding an npm package to our rails app! Let's follow the slides to see how to add `select2` to our ingredients dropdown.
 
-### 8 - Let's add reviews for these awesome cocktails! (Optional)
+### 14 - Let's add reviews for these awesome cocktails! (Optional)
 
 ![](https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/mister_cocktail_d1/show_2.png)
 
-### 9 - Going further
+### 15 - Going further
 
 - Adding a possibility to search cocktails and adding `typed.js` to the search input field.
 - Some nice [animate on scroll](https://michalsnik.github.io/aos/) animations for our list of cocktails as we scroll down the index.
