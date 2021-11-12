@@ -145,6 +145,95 @@ DELETE "doses/25"
 
 Do we need an `IngredientsController`?
 
+### 5 - Add a root path
+```ruby
+# config/routes.rb
+Rails.application.routes.draw do
+  root to: 'cocktails#index'
+  # ...
+end
+```
+
+### 6 - Create a Heroku application and push
+```bash
+heroku create APP_NAME --region=us
+git push heroku master
+```
+
+### 7 - Add dotenv-rails
+Add the gem in your Gemfile
+```ruby
+gem 'dotenv-rails', groups: [:development, :test]
+```
+Bundle install, create the .env file then commit
+```bash
+bundle install
+touch .env
+echo '.env*' >> .gitignore
+git status # .env should not be there, we don't want to push it to Github.
+git add .
+git commit -m "Add dotenv - Protect my secret data in .env file"
+```
+
+### 8 - Add Cloudinary gem
+Add the gem in your Gemfile then bundle install
+```ruby
+gem 'dotenv-rails', groups: [:development, :test]
+```
+Add your Cloudinary key into the .env file
+```ruby
+CLOUDINARY_URL=cloudinary://298522699261255:Qa1ZfO4syfbOC-***********************8
+```
+
+### 9 - Install Active Storage
+```bash
+rails active_storage:install
+rails db:migrate
+```
+
+### 10 - Configure Cloudinary with Active Storage
+```yml
+# config/storage.yml
+cloudinary:
+  service: Cloudinary
+  folder: <%= Rails.env %>
+```
+
+```ruby
+# config/environments/development.rb
+config.active_storage.service = :cloudinary
+# config/environments/production.rb
+config.active_storage.service = :cloudinary
+```
+Attach it to your model
+```ruby
+class Cocktail < ApplicationRecord
+  has_one_attached :photo
+end
+```
+Add it to your cocktail form
+```ruby
+<!-- app/views/articles/_form.html.erb -->
+<%= simple_form_for @cocktail do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo, as: :file %>
+  <!-- [...] -->
+<% end %>
+```
+
+Add to your strong params
+```ruby 
+# app/controllers/articles_controller.rb
+def article_params
+  params.require(:cocktail).permit(:name, :photo)
+end
+```
+PUSH YOUR API KEY TO HEROKU
+```bash
+heroku config:set CLOUDINARY_URL=cloudinary://166....
+```
+
+
 ### 5 - Design as we go
 
 Now time to make a nice front-end! Time to play around with CSS! 😊 Can you make it into the Hall of Fame? Go check out [dribbble](https://dribbble.com/) or [onepagelove](https://onepagelove.com/) for inspiration.
