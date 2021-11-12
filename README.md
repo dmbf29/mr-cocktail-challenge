@@ -11,7 +11,10 @@ manager. We want to store our favourite cocktails, and their recipes.
 
 ```bash
 cd ~/code/<user.github_nickname>
-rails new rails-mister-cocktail --database=postgresql  -T
+rails new \
+  --database=postgresql \
+  -m https://raw.githubusercontent.com/lewagon/rails-templates/master/minimal.rb \
+  rails-mister-cocktail
 cd rails-mister-cocktail
 ```
 
