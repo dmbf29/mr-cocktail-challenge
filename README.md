@@ -7,7 +7,7 @@ manager. We want to store our favourite cocktails, and their recipes.
 ## Rails app generation
 
 
-**Note**: You should now be able to run these steps without this cheat sheet! Let's also add a `--database=postgresql` (we will talk about this tomorrow). 😉
+**Note**: You should now be able to run these steps without this cheat sheet! Let's also add a `--database=postgresql` . 😉
 
 ```bash
 cd ~/code/<user.github_nickname>
