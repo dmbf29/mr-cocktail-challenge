@@ -13,7 +13,6 @@ manager. We want to store our favourite cocktails, and their recipes.
 cd ~/code/<user.github_nickname>
 rails new \
   -d postgresql \
-  -j webpack \
   -m https://raw.githubusercontent.com/lewagon/rails-templates/master/minimal.rb \
   rails-mister-cocktail
   
